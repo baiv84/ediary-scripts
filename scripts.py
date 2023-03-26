@@ -43,7 +43,7 @@ def remove_chastisements(child_name='Фролов Иван'):
     child = get_child_by_name(child_name)
     if child:
         chastisements = Chastisement.objects.filter(schoolkid=child)
-        removed_chastisements_count = len(list(map(lambda x: x.delete(), chastisements)))
+        removed_chastisements_count = len(list(map(lambda chastisement: chastisement.delete(), chastisements)))
     return removed_chastisements_count
 
 
